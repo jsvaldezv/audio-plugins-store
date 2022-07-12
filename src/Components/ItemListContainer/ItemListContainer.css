@@ -1,0 +1,13 @@
+.itemListContainer{
+	background-color: #cecece;
+	width: 100%;
+	height:90vh;
+
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.itemListContainer h1{
+	margin: 0;
+}

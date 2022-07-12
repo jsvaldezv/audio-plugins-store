@@ -1,7 +1,8 @@
 import React from 'react'
 import "./NavBar.css"
 
-import logo from "../../Assets/logo.png"
+import Logo from './Logo/Logo.js'
+import Cart from './Cart/Cart.js'
 
 function NavBar() 
 {
@@ -9,18 +10,16 @@ function NavBar()
 
 		<div className="navBar">
 
-			<img src={logo}/>
+			<Logo />
 
 			<ul>
-				<li>Home</li>
-				<li>Shop</li>
-				<li>Contact</li>
-				<li>Us</li>
+				<li className="navBar-li">Home</li>
+				<li className="navBar-li">Shop</li>
+				<li className="navBar-li">Contact</li>
+				<li className="navBar-li">Us</li>
+				<li className="navBar-li">Account</li>
+				<Cart />
 			</ul>
-
-			<div>
-				Account
-			</div>
 
 		</div>
 	)

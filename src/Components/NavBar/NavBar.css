@@ -8,17 +8,15 @@
 	justify-content: space-between;
 	align-items:center;
 }
-.navBar img{
-	width: 60px;
-	margin: 0px 40px;
-}
+
 .navBar ul{
 	list-style: none;
 	display: flex;
+	align-items: center;
 }
-.navBar li, .navBar div{
-	margin: 0px 40px;
-	width: 100px;
+.navBar li{
+	margin: 0px 15px;
+	width: 80px;
 	height: 30px;
 	color: black;
 	background-color: white;
@@ -26,8 +24,12 @@
 	display: flex;
 	justify-content:center;
 	align-items: center;
+	font-size: 13px;
 }
-.navBar li:hover, .navBar div:hover{
+.navBar-li:hover{
 	cursor: pointer;
 	filter: brightness(0.8);
+}
+.navBar div{
+	cursor: pointer;
 }
