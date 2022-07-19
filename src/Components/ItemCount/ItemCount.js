@@ -6,7 +6,7 @@ function ItemCunt({stock, initial, addCart})
 	const [count, setCount] = useState(initial);
 	
 	const lessOperation = () => {
-		if (count > 0)
+		if (count > 1)
 			setCount(count - 1);
 	}
 
