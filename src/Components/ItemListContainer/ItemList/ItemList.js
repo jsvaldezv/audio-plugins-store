@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./ItemList.css"
 
 import Item from "./Item/Item.js"
-import { products } from './Productos.js';
+import { products } from '../../Productos/Productos.js';
 
 const getProducts = () => {
 	return new Promise((resolve, reject) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import "./ItemListContainer.css"
 
 import ItemCount from "../ItemCount/ItemCount.js"
-import ItemList from "../ItemList/ItemList.js"
+import ItemList from "./ItemList/ItemList.js"
 
 function ItemListContainer({title}) 
 {
