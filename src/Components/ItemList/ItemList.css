@@ -11,6 +11,7 @@
 	display: flex;
 	justify-content:center;
 	align-items:center;
+	padding: 0;
 }
 .itemList li{
 	margin: 0 20px;

@@ -2,7 +2,7 @@
 	background-color: rgb(0, 133, 181);
 	color: white;
 	width: 200px;
-	height: 200px;
+	height: auto;
 
 	display: flex;
 	justify-content:center;
