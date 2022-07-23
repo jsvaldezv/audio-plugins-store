@@ -1,7 +1,6 @@
-import React from 'react'
-import "./ItemListContainer.css"
+import React, { useEffect } from 'react'
 
-import ItemCount from "../ItemCount/ItemCount.js"
+import "./ItemListContainer.css"
 import ItemList from "./ItemList/ItemList.js"
 
 function ItemListContainer({title}) 
@@ -9,10 +8,6 @@ function ItemListContainer({title})
 	return (
 
 		<div className="itemListContainer">
-
-			<h1>{title}</h1>
-
-			<ItemCount stock={5} initial={1}/>
 
 			<ItemList />
 

@@ -1,7 +1,7 @@
 .itemDetail{
 	margin: 0 40px;
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: auto;
 	background-color:black;
 	display: flex;
 	justify-content:center;
@@ -9,10 +9,6 @@
 	flex-direction:column;
 	border-radius:20px;
 	color: white;
-}
-
-.itemDetail:hover{
-	filter: brightness(0.85);
 }
 
 .itemDetail li{

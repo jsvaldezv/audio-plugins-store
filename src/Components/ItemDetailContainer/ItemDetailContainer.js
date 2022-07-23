@@ -1,36 +1,48 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.css"
 
 import ItemDetail from "./ItemDetail/ItemDetail.js"
-
 import { products } from '../Productos/Productos.js';
 
 const getProducts = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve(products);
-		}, 2000)
+		}, 500)
 	})
 }
 
 function ItemDetailContainer() 
 {
-	const [productsArray, setProductsArray] = useState([]);
+	const [productArray, setProductArray] = useState([]);
+	const { itemId } = useParams();
 
 	useEffect(() => {
 		getProducts()
 		.then(respuesta => {
-			setProductsArray(respuesta)
+
+			let product;
+
+			for(let i = 0; i < respuesta.length; i++) {
+				if (respuesta[i].id == itemId){
+					product = respuesta[i]
+				}
+			}
+
+			setProductArray(product)
 		})
 		.catch(err => console.log(err))
 	}, []);
 
+	useEffect(() => {
+		
+	}, [itemId])
+
 	return (
 
 		<div className="itemDetailContainer">
-			{productsArray.map(product => 
-					<ItemDetail name={product.name} price={product.price} description={product.categoria}/> 
-			)}
+			<ItemDetail name={productArray.name} price={productArray.price} description={productArray.categoria}/> 
 		</div>
 
 	)

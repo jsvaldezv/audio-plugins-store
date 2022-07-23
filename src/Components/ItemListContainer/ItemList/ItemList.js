@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link, NavLink } from "react-router-dom";
+
 import "./ItemList.css"
 
 import Item from "./Item/Item.js"
@@ -8,7 +10,7 @@ const getProducts = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve(products);
-		}, 2000)
+		}, 500)
 	})
 }
 
@@ -36,10 +38,13 @@ function ItemList()
 				<ul>
 					{productsArray.map(product => 
 						<li key={product.id}> 
-							<Item 	title={product.name} 
-									price={product.price} 
-									category={product.categoria}
-									color={product.color}/> 
+							{/* <NavLink to={`/category/${product.id}`}> 	 */}
+								<Item 	title={product.name} 
+										price={product.price} 
+										category={product.categoria}
+										color={product.color}
+										id={product.id}/>
+							{/* </NavLink> */}
 						</li>
 					)}
 				</ul>
