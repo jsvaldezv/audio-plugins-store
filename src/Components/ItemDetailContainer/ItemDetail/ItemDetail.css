@@ -11,6 +11,10 @@
 	color: white;
 }
 
+.itemDetail p{
+	color: white;
+}
+
 .itemDetail li{
 	list-style-type: none;
 }

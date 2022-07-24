@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useParams } from "react-router-dom";
 
 import "./ItemListContainer.css"
 import ItemList from "./ItemList/ItemList.js"
 
-function ItemListContainer({title}) 
+function ItemListContainer() 
 {
+	const { categoryId } = useParams();
+
 	return (
 
 		<div className="itemListContainer">
 
-			<ItemList />
+			<ItemList inCategory={categoryId}/>
 
 		</div>
 

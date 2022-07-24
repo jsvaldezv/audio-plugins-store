@@ -14,7 +14,7 @@ const getProducts = () => {
 	})
 }
 
-function ItemList() 
+function ItemList({inCategory}) 
 {
 	const [productsArray, setProductsArray] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -22,11 +22,26 @@ function ItemList()
 	useEffect(() => {
 		getProducts()
 		.then(respuesta => {
-			setProductsArray(respuesta)
+
+			let products = [];
+
+			for(let i = 0; i < respuesta.length; i++) 
+			{
+				if (respuesta[i].category == inCategory){
+					console.log(respuesta[i])
+					products.push(respuesta[i]);
+				}
+			}
+
+			if (products.length == 0)
+				setProductsArray(respuesta);
+			else
+				setProductsArray(products);
+
 			setIsLoading(false)
 		})
 		.catch(err => console.log(err))
-	}, []);
+	});
 
 	return (
 
@@ -38,13 +53,10 @@ function ItemList()
 				<ul>
 					{productsArray.map(product => 
 						<li key={product.id}> 
-							{/* <NavLink to={`/category/${product.id}`}> 	 */}
-								<Item 	title={product.name} 
-										price={product.price} 
-										category={product.categoria}
-										color={product.color}
-										id={product.id}/>
-							{/* </NavLink> */}
+							<Item 	title={product.name} 
+									price={product.price}
+									color={product.color}
+									id={product.id}/>
 						</li>
 					)}
 				</ul>

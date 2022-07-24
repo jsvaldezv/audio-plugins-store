@@ -9,7 +9,7 @@ const getProducts = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve(products);
-		}, 500)
+		}, 10)
 	})
 }
 
@@ -35,14 +35,10 @@ function ItemDetailContainer()
 		.catch(err => console.log(err))
 	}, []);
 
-	useEffect(() => {
-		
-	}, [itemId])
-
 	return (
 
 		<div className="itemDetailContainer">
-			<ItemDetail name={productArray.name} price={productArray.price} description={productArray.categoria}/> 
+			<ItemDetail name={productArray.name} price={productArray.price} description={productArray.category}/> 
 		</div>
 
 	)
