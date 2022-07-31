@@ -5,7 +5,11 @@ import { useCartContext } from '../../Contexts/CartContext'
 
 function CartUser() 
 {
-	const { cartList } = useCartContext()
+	const { cartList, clearCarrito, removeItem } = useCartContext()
+
+	const handleRemoveItem = (inItemId) => {
+		removeItem(inItemId)
+	}
 
 	console.log("In carrito:", cartList)
 
@@ -18,12 +22,12 @@ function CartUser()
 				{ cartList.map(item => (
 					<li key={item.id}>
 						{item.name} - {item.cant}
-						{/* <button onClick={removeItem(item.id)}>Remove</button> */}
+						<button onClick={() => handleRemoveItem(item.id)}>Remove</button>
 					</li>
 				))}
 			</ul>
 
-			{/* <button onClick={clear}>Vaciar carro</button> */}
+			<button onClick={clearCarrito}>Vaciar carrito</button>
 
 		</div>
 	)

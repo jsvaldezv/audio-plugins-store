@@ -13,7 +13,7 @@ const CartContextProvider = ({children}) => {
 		let isLoaded = cartList.find(item => item.id === inItem.id)
 
 		if (isLoaded) {
-			console.log("You already have this product")
+			isLoaded.cant += inItem.cant;
 		}
 		else{
 			setCartList([
@@ -24,29 +24,27 @@ const CartContextProvider = ({children}) => {
 	}
 
 	const removeItem = (itemID) => {
-		let item = cartList.findIndex(item => item.id === itemID)
-		cartList.splice(item, 1);
+		setCartList(cartList.filter(item => item.id !== itemID));
 	}
 
-	const clear = () => {
+	const clearCarrito = () => {
 		setCartList([])
 	}
 
-	const isInCart = (itemID) => {
-		let isLoaded = cartList.find(item => item.id === itemID)
+	// const isInCart = (itemID) => {
+	// 	let isLoaded = cartList.find(item => item.id === itemID)
 
-		if (isLoaded)
-			return true;
-		else
-			return false;
-	}
+	// 	if (isLoaded)
+	// 		return true;
+	// 	else
+	// 		return false;
+	// }
 
 	return (
 		<CartContext.Provider value={{ 	cartList,
 										addToCart,
 										removeItem,
-										// clear,
-										// isInCart 
+										clearCarrito,
 									}}>
 			{children}
 		</CartContext.Provider>
