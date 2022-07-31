@@ -28,7 +28,7 @@ function ItemList({inCategory})
 			for(let i = 0; i < respuesta.length; i++) 
 			{
 				if (respuesta[i].category == inCategory){
-					console.log(respuesta[i])
+					// console.log(respuesta[i])
 					products.push(respuesta[i]);
 				}
 			}

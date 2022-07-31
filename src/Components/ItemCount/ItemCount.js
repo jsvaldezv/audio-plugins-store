@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import "./ItemCount.css"
 
-function ItemCunt({stock, initial, addCart}) 
+function ItemCunt({stock, initial, onAdd}) 
 {
 	const [count, setCount] = useState(initial);
 	
 	const lessOperation = () => {
-		if (count > 1)
+		if (count > initial)
 			setCount(count - 1);
 	}
 
@@ -16,7 +16,7 @@ function ItemCunt({stock, initial, addCart})
 	}
 
 	const addToCart = () => {
-		console.log("Productos en carrito:", count);
+		onAdd(count)
 	}
 
 	return (
