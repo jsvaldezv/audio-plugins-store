@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 
@@ -12,8 +12,11 @@ function ItemDetail({name, description, price})
 	const onAdd = (cant) => {
 		setCartCount(cant);
 		setShowItemCount(false);
-		console.log("Cantidad:", cant);
 	}
+
+	useEffect(() => {
+		console.log("Cantidad:", cartCount);
+	}, [cartCount])
 
 	return (
 		<div className="itemDetail">
