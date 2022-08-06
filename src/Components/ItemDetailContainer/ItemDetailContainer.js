@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
+
 import "./ItemDetailContainer.css"
 
 import ItemDetail from "./ItemDetail/ItemDetail.js"
@@ -15,8 +16,8 @@ const getProducts = () => {
 
 function ItemDetailContainer() 
 {
-	const [productArray, setProductArray] = useState([]);
 	const { itemId } = useParams();
+	const [productItemDetail, setProductItemDetail] = useState([]);
 
 	useEffect(() => {
 		getProducts()
@@ -25,12 +26,12 @@ function ItemDetailContainer()
 			let product;
 
 			for(let i = 0; i < respuesta.length; i++) {
-				if (respuesta[i].id == itemId){
+				if (respuesta[i].id === parseInt(itemId)){
 					product = respuesta[i]
 				}
 			}
 
-			setProductArray(product)
+			setProductItemDetail(product)
 		})
 		.catch(err => console.log(err))
 	}, []);
@@ -38,7 +39,11 @@ function ItemDetailContainer()
 	return (
 
 		<div className="itemDetailContainer">
-			<ItemDetail name={productArray.name} price={productArray.price} description={productArray.category}/> 
+			<ItemDetail name={productItemDetail.name} 
+						price={productItemDetail.price} 
+						description={productItemDetail.category}
+						id={productItemDetail.id}
+			/> 
 		</div>
 
 	)

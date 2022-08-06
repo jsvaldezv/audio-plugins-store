@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useCartContext } from "../../../Contexts/CartContext"
 import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 
 import ItemCount from "../../ItemCount/ItemCount.js"
 
-function ItemDetail({name, description, price}) 
+function ItemDetail({name, description, price, id}) 
 {
+	const { addToCart, cartList } = useCartContext();
+
 	const [showItemCount, setShowItemCount] = useState(true);
-	const [cartCount, setCartCount] = useState(0);
 
 	const onAdd = (cant) => {
-		setCartCount(cant);
 		setShowItemCount(false);
+		addToCart( { id: id, name: name, description: description, price: price, cant: cant } )
 	}
 
-	useEffect(() => {
-		console.log("Cantidad:", cartCount);
-	}, [cartCount])
+	console.log("Cart list:", cartList);
 
 	return (
 		<div className="itemDetail">

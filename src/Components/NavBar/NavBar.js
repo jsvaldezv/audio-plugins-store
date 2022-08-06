@@ -20,7 +20,8 @@ function NavBar()
 				<NavLink to={`/category/${"reverb"}`}> <li className="navBar-li">Reverb</li> </NavLink>
 				<NavLink to={`/category/${"delay"}`}> <li className="navBar-li">Delay</li> </NavLink>
 				<NavLink to={`/category/${"granular"}`}> <li className="navBar-li">Granular</li> </NavLink>
-				<Cart />
+
+				<Link to={"/cart"}><Cart/></Link>
 			</ul>
 
 		</div>

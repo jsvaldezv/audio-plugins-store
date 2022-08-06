@@ -1,0 +1,9 @@
+.cartUser{
+	width: 100%;
+	height: 85vh;
+}
+
+.cartUser h1{
+	text-align: center;
+	color: black;
+}

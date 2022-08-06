@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
 import "./ItemListContainer.css"
-import ItemList from "./ItemList/ItemList.js"
 
+import ItemList from "./ItemList/ItemList.js"
 import { products } from '../Productos/Productos.js';
 
 const getProducts = () => {
