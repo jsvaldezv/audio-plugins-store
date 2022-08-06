@@ -8,7 +8,9 @@
 	justify-content: space-between;
 	align-items:center;
 }
-
+.navBar a{
+	text-decoration: none;
+}
 .navBar ul{
 	list-style: none;
 	display: flex;

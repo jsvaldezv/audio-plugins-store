@@ -3,11 +3,23 @@ import "./Cart.css"
 
 import logoCart from "../../../Assets/carrito.png"
 
+import { useCartContext } from '../../../Contexts/CartContext'
+
 function Cart() 
 {
+	const { getnumItems, numItems } = useCartContext()
+
+	getnumItems();
+
 	return (
 		<div className="cart">
-			<img src={logoCart} />
+			
+			<div>
+				<img src={logoCart} />
+			</div>
+
+			{ numItems > 0 ? <h3> {numItems} </h3> : "" }
+			
 		</div>
 	)
 }

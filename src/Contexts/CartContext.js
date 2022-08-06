@@ -6,7 +6,37 @@ export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) => {
 
-	const [cartList, setCartList] = useState([])
+	const [cartList, setCartList] = useState([]);
+	const [totalCart, setTotalCart] = useState(10);
+	const [numItems, setNumItems] = useState(0);
+
+	const getnumItems = () => {
+		let total = 0;
+		for (let i = 0; i < cartList.length; i++)
+		{
+			for (let cant = 0; cant < cartList[i].cant; cant++)
+			{
+				total += 1;
+			}
+		}
+		
+		setNumItems(total);
+	}
+
+	const getTotalCart = () => {
+		let total = 0;
+
+		for (let i = 0; i < cartList.length; i++)
+		{
+			for (let cant = 0; cant < cartList[i].cant; cant++)
+			{
+				let price = parseFloat(cartList[i].price);
+				total += price;
+			}
+		}
+
+		setTotalCart(total)
+	}
 
 	const addToCart = (inItem) => {
 
@@ -45,6 +75,11 @@ const CartContextProvider = ({children}) => {
 										addToCart,
 										removeItem,
 										clearCarrito,
+										getTotalCart,
+										totalCart,
+										getnumItems,
+										numItems,
+
 									}}>
 			{children}
 		</CartContext.Provider>
