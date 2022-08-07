@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import './App.css';
+import { firebaseConnection } from "./Firebase/config"
 
 // Components
 import CartContextProvider from "./Contexts/CartContext.js"
@@ -9,6 +9,8 @@ import CartUser from "./Components/CartUser/CartUser.js"
 import NavBar from "./Components/NavBar/NavBar.js"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer.js"
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer.js"
+
+firebaseConnection();
 
 function App() 
 {
