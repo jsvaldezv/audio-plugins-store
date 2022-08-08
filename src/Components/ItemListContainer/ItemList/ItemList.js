@@ -18,7 +18,8 @@ function ItemList({inProducts, loading})
 							<Item 	title={product.name} 
 									price={product.price}
 									color={product.color}
-									id={product.id}/>
+									id={product.id}
+									image={product.image}/>
 						</li>
 					)}
 				</ul>

@@ -6,64 +6,67 @@ import "./ItemDetailContainer.css"
 
 import ItemDetail from "./ItemDetail/ItemDetail.js"
 
-import { products } from '../Productos/Productos.js';
-const getProducts = () => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve(products);
-		}, 10)
-	})
-}
+// import { products } from '../Productos/Productos.js';
+// const getProducts = () => {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			resolve(products);
+// 		}, 10)
+// 	})
+// }
 
 function ItemDetailContainer() 
 {
 	const { itemId } = useParams();
 	const [productItemDetail, setProductItemDetail] = useState([]);
 
-	useEffect(() => {
-		getProducts()
-		.then(respuesta => {
-
-			let product;
-
-			for(let i = 0; i < respuesta.length; i++) {
-				if (respuesta[i].id === parseInt(itemId)){
-					product = respuesta[i]
-				}
-			}
-
-			setProductItemDetail(product)
-		})
-		.catch(err => console.log(err))
-	}, []);
-
 	// useEffect(() => {
-	// 	const db = getFirestore();
-	// 	const queryCollection = collection(db, "items");
-	// 	getDocs(queryCollection).then(respuesta => {
-	// 		let products;
-	// 		let finalProduct;
+	// 	getProducts()
+	// 	.then(respuesta => {
 
-	// 		products = respuesta.docs.map(prod => ({id: prod.id, ...prod.data()}));
+	// 		let product;
 
-	// 		for(let i = 0; i < products.length; i++) {
-	// 			if (products[i].id === parseInt(itemId)){
-	// 				finalProduct = products[i]
+	// 		for(let i = 0; i < respuesta.length; i++) {
+	// 			if (respuesta[i].id === parseInt(itemId)){
+	// 				product = respuesta[i]
 	// 			}
 	// 		}
 
-	// 		setProductItemDetail(finalProduct)
+	// 		setProductItemDetail(product)
+
+	// 		console.log("Detail Container")
 	// 	})
 	// 	.catch(err => console.log(err))
-	// }, [])
+	// }, [itemId]);
+
+	useEffect(() => {
+		const db = getFirestore();
+		const queryCollection = collection(db, "items");
+		getDocs(queryCollection).then(respuesta => {
+			let products;
+			let finalProduct;
+
+			products = respuesta.docs.map(prod => ({id: prod.id, ...prod.data()}));
+
+			for(let i = 0; i < products.length; i++) {
+				if (products[i].id === parseInt(itemId)){
+					finalProduct = products[i]
+				}
+			}
+
+			setProductItemDetail(finalProduct)
+		})
+		.catch(err => console.log(err))
+	}, [])
 
 	return (
 
 		<div className="itemDetailContainer">
 			<ItemDetail name={productItemDetail.name} 
 						price={productItemDetail.price} 
-						description={productItemDetail.category}
+						description={productItemDetail.description}
 						id={productItemDetail.id}
+						image={productItemDetail.image}
 			/> 
 		</div>
 

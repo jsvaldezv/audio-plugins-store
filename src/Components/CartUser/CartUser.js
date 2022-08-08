@@ -18,9 +18,11 @@ function CartUser()
 					{ 
 						cartList.map(item => (
 							<li key={item.id}>
-								<h3>Producto: {item.name}</h3>
-								<h4>Cantidad: {item.cant}</h4>
-								<button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+								<h3>{item.name}</h3>
+								<h4>${item.price} USD</h4>
+								<h5>Cantidad: {item.cant}</h5>
+								<img src={item.image}/>
+								<button onClick={() => handleRemoveItem(item.id)} className="remove">Remove</button>
 							</li>
 						))
 					}
@@ -33,7 +35,7 @@ function CartUser()
 	}
 
 	const emptyCart = () => {
-		return 	<div>
+		return 	<div className="cartUser-empty">
 					<h2>No tienes ningún producto añadido</h2>
 					<Link to={"/"}><button>Ir a tienda</button></Link>
 				</div>

@@ -71,8 +71,6 @@ function ItemListContainer()
 				setProductsArray(finalProducts);
 
 			setIsLoading(false)
-
-			console.log("List Container");
 		})
 		.catch(err => console.log(err))
 	}, [categoryId])
