@@ -1,10 +1,11 @@
 .itemListContainer{
 	background-color: #cecece;
 	width: 100%;
-	height:90vh;
+	height: auto;
+	min-height: 90vh;
 
 	display: flex;
-	justify-content:center;
+	justify-content:flex-start;
 	align-items:center;
 	flex-direction: column;
 }

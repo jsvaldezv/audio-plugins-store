@@ -1,7 +1,14 @@
 .itemList{
 	width: 100%;
-	height: 50vh;
+	height: auto;
 
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.itemList-loading{
+	width: 100%;
+	height: 90vh;
 	display: flex;
 	justify-content:center;
 	align-items:center;
@@ -9,12 +16,14 @@
 
 .itemList ul{
 	display: flex;
-	justify-content:center;
+	justify-content:space-evenly;
 	align-items:center;
 	padding: 0;
 	flex-wrap: wrap;
 }
+
 .itemList li{
+	width: 40%;
 	margin: 10px 20px;
 	list-style: none;
 }

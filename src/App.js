@@ -19,15 +19,13 @@ function App()
 		<BrowserRouter>
 
 			<CartContextProvider>
-				<div>
-				<NavBar />
-				<Routes>
-					<Route exact path="/" element={<ItemListContainer />}/>
-					<Route exact path="/category/:categoryId" element={<ItemListContainer title={"Contador"}/>}/>
-					<Route exact path="/item/:itemId" element={<ItemDetailContainer />}/>
-					<Route exact path="/cart" element={<CartUser />}/>
-				</Routes>
-				</div>
+					<NavBar />
+					<Routes>
+						<Route exact path="/" element={<ItemListContainer />}/>
+						<Route exact path="/category/:categoryId" element={<ItemListContainer title={"Contador"}/>}/>
+						<Route exact path="/item/:itemId" element={<ItemDetailContainer />}/>
+						<Route exact path="/cart" element={<CartUser />}/>
+					</Routes>
 			</CartContextProvider>
 
 		</BrowserRouter>

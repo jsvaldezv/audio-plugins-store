@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { getFirestore, getDocs, collection } from "firebase/firestore";
+import { getFirestore, getDocs, collection, query } from "firebase/firestore";
 
 import "./ItemListContainer.css"
 
@@ -41,15 +41,17 @@ function ItemListContainer()
 	// 			setProductsArray(products);
 
 	// 		setIsLoading(false)
+
+	// 		console.log("List Container");
 	// 	})
 	// 	.catch(err => console.log(err))
-	// });
+	// }, [categoryId]);
 
 	useEffect(() => {
 
 		const db = getFirestore();
 		const queryCollection = collection(db, "items");
-
+		
 		getDocs(queryCollection).then(respuesta => {
 			let products = [];
 			let finalProducts = [];
@@ -69,9 +71,11 @@ function ItemListContainer()
 				setProductsArray(finalProducts);
 
 			setIsLoading(false)
+
+			console.log("List Container");
 		})
 		.catch(err => console.log(err))
-	})
+	}, [categoryId])
 
 	return (
 
