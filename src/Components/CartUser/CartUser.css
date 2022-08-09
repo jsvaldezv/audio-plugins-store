@@ -98,3 +98,81 @@
 	background-color:#cecece !important;
 	color: black !important;
 }
+
+
+/* Formulario */
+.formulario {
+	width: 50%;
+	margin-top: 50px;
+	background: black;
+	border-radius: 20px;
+	padding: 20px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	margin: 2rem 0;
+}
+
+.formulario > div {
+	margin-bottom: 0px;
+}
+
+.formulario label {
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: black;
+}
+
+.formulario input,
+.formulario textarea {
+	font-family: 'Open Sans', sans-serif;
+	width: 97%;
+	border-radius: 5px;
+	border: 2px solid #cecece;
+	font-size: 18px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: black;
+	background-color: #cecece;
+}
+
+.formulario input:focus {
+	outline: none;
+	border: 2px solid #0085FF;
+}
+
+.formulario .error {
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.formulario button[type="submit"] {
+	display: block;
+	background: #cecece;
+	font-weight: 600;
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: .3s ease all;
+}
+
+.formulario button[type="submit"]:hover {
+	background: #cecece;
+	color: black;
+}
+
+.formulario .exito {
+	text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	color: #02a802;
+}
+
+.formulario input[type="radio"] {
+	width: auto;
+}
