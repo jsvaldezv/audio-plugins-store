@@ -6,38 +6,10 @@ import "./ItemDetailContainer.css"
 
 import ItemDetail from "./ItemDetail/ItemDetail.js"
 
-// import { products } from '../Productos/Productos.js';
-// const getProducts = () => {
-// 	return new Promise((resolve, reject) => {
-// 		setTimeout(() => {
-// 			resolve(products);
-// 		}, 10)
-// 	})
-// }
-
 function ItemDetailContainer() 
 {
 	const { itemId } = useParams();
 	const [productItemDetail, setProductItemDetail] = useState([]);
-
-	// useEffect(() => {
-	// 	getProducts()
-	// 	.then(respuesta => {
-
-	// 		let product;
-
-	// 		for(let i = 0; i < respuesta.length; i++) {
-	// 			if (respuesta[i].id === parseInt(itemId)){
-	// 				product = respuesta[i]
-	// 			}
-	// 		}
-
-	// 		setProductItemDetail(product)
-
-	// 		console.log("Detail Container")
-	// 	})
-	// 	.catch(err => console.log(err))
-	// }, [itemId]);
 
 	useEffect(() => {
 		const db = getFirestore();
@@ -53,8 +25,11 @@ function ItemDetailContainer()
 					finalProduct = products[i]
 				}
 			}
-
-			setProductItemDetail(finalProduct)
+			
+			if (finalProduct === undefined)
+				setProductItemDetail(0);
+			else
+				setProductItemDetail(finalProduct)
 		})
 		.catch(err => console.log(err))
 	}, [])
@@ -62,12 +37,16 @@ function ItemDetailContainer()
 	return (
 
 		<div className="itemDetailContainer">
-			<ItemDetail name={productItemDetail.name} 
-						price={productItemDetail.price} 
-						description={productItemDetail.description}
-						id={productItemDetail.id}
-						image={productItemDetail.image}
-			/> 
+			{ 	
+				productItemDetail === 0 ?
+				<h1>No existe este producto</h1>
+				: 
+				<ItemDetail name={productItemDetail.name} 
+				price={productItemDetail.price} 
+				description={productItemDetail.description}
+				id={productItemDetail.id}
+				image={productItemDetail.image}	/> 
+			}
 		</div>
 
 	)
