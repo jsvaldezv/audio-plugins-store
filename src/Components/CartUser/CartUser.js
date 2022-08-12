@@ -69,6 +69,7 @@ function CartUser()
 							addDoc(queryOrders, order)
 							.then(resp => {
 								console.log("Compra realizada:", resp.id);
+								clearCarrito();
 								navigate(`/thanks/${resp.id}`);
 							})
 						}} >
@@ -89,6 +90,17 @@ function CartUser()
 
 								<div>
 									<label htmlFor="correo">Correo</label>
+									<Field
+										type="text" 
+										id="correo" 
+										name="correo" 
+										placeholder="correo@correo.com" 
+									/>
+									<ErrorMessage name="correo" component={() => (<div className="error">{errors.correo}</div>)} />
+								</div>
+
+								<div>
+									<label htmlFor="correo">Confirma correo</label>
 									<Field
 										type="text" 
 										id="correo" 
