@@ -6,6 +6,8 @@ Este proyecto es una aplicación web desarrollada con React JS y firebase con el
 
 Demo: https://plugins-store.web.app/
 
+https://user-images.githubusercontent.com/47612276/184424094-d49b30d6-6a72-4616-993a-1cbc7d9030f4.mov
+
 ## Dependencias y librerias utilizadas
 
 1. Node JS ^16.16.0 ( https://nodejs.org/es/): Entorno de ejecución para JavaScript.
