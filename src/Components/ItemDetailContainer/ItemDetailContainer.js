@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 
 import "./ItemDetailContainer.css"
 
 import ItemDetail from "./ItemDetail/ItemDetail.js"
-import { products } from '../Productos/Productos.js';
-
-const getProducts = () => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve(products);
-		}, 10)
-	})
-}
 
 function ItemDetailContainer() 
 {
@@ -20,30 +12,41 @@ function ItemDetailContainer()
 	const [productItemDetail, setProductItemDetail] = useState([]);
 
 	useEffect(() => {
-		getProducts()
-		.then(respuesta => {
+		const db = getFirestore();
+		const queryCollection = collection(db, "items");
+		getDocs(queryCollection).then(respuesta => {
+			let products;
+			let finalProduct;
 
-			let product;
+			products = respuesta.docs.map(prod => ({id: prod.id, ...prod.data()}));
 
-			for(let i = 0; i < respuesta.length; i++) {
-				if (respuesta[i].id === parseInt(itemId)){
-					product = respuesta[i]
+			for(let i = 0; i < products.length; i++) {
+				if (products[i].id === parseInt(itemId)){
+					finalProduct = products[i]
 				}
 			}
-
-			setProductItemDetail(product)
+			
+			if (finalProduct === undefined)
+				setProductItemDetail(0);
+			else
+				setProductItemDetail(finalProduct)
 		})
 		.catch(err => console.log(err))
-	}, []);
+	}, [])
 
 	return (
 
 		<div className="itemDetailContainer">
-			<ItemDetail name={productItemDetail.name} 
-						price={productItemDetail.price} 
-						description={productItemDetail.category}
-						id={productItemDetail.id}
-			/> 
+			{ 	
+				productItemDetail === 0 ?
+				<h1>No existe este producto</h1>
+				: 
+				<ItemDetail name={productItemDetail.name} 
+				price={productItemDetail.price} 
+				description={productItemDetail.description}
+				id={productItemDetail.id}
+				image={productItemDetail.image}	/> 
+			}
 		</div>
 
 	)

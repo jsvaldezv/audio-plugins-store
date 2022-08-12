@@ -10,14 +10,14 @@
 }
 
 .cart img{
-	filter: invert(1);
+	filter: brightness(0) saturate(100%) invert(96%) sepia(6%) saturate(14%) hue-rotate(99deg) brightness(86%) contrast(92%);
 	width: 50px;
 	height: 50px;
 }
 
 .cart h3{
 	color: black;
-	background-color: white;
+	background-color: #cecece;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;

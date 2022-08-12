@@ -10,7 +10,7 @@ function ItemList({inProducts, loading})
 		<div className="itemList">
 			
 			{ loading ?
-				<h2>Loading...</h2> 
+				<div className="itemList-loading"> <h2>Loading...</h2>  </div>	
 				: 
 				<ul>
 					{inProducts.map(product => 
@@ -18,7 +18,8 @@ function ItemList({inProducts, loading})
 							<Item 	title={product.name} 
 									price={product.price}
 									color={product.color}
-									id={product.id}/>
+									id={product.id}
+									image={product.image}/>
 						</li>
 					)}
 				</ul>
