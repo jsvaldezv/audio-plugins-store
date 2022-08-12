@@ -8,9 +8,11 @@ Demo: https://plugins-store.web.app/
 
 ## Dependencias y librerias utilizadas
 
-1. Node JS: https://nodejs.org/es/
-2. React JS: https://es.reactjs.org/
-3. Firebase: https://firebase.google.com/?hl=es
+1. Node JS ^16.16.0 ( https://nodejs.org/es/): Entorno de ejecución para JavaScript.
+2. React JS ^18.2.0 (https://es.reactjs.org/): Biblioteca de JavaScript para construir todo el front-end de la aplicación.
+3. Firebase ^9.9.2 (https://firebase.google.com/?hl=es): Para base de datos y hosting.
+4. Formik ^2.2.9 (https://formik.org/): Para maneja de formulario
+5. React-router-dom ^6.3.0 (https://www.npmjs.com/package/react-router-dom): Navegación dentro de la aplicación.
 
 ## Instalación
 
