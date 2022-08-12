@@ -61,15 +61,6 @@ const CartContextProvider = ({children}) => {
 		setCartList([])
 	}
 
-	// const isInCart = (itemID) => {
-	// 	let isLoaded = cartList.find(item => item.id === itemID)
-
-	// 	if (isLoaded)
-	// 		return true;
-	// 	else
-	// 		return false;
-	// }
-
 	return (
 		<CartContext.Provider value={{ 	cartList,
 										addToCart,
