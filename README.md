@@ -1,36 +1,27 @@
 # Audio Plug-ins Store
 
-## Introducción
+## Introduction
 
-Este proyecto es una aplicación web desarrollada con React JS y firebase con el objetivo de simular una tienda virtual de plug-ins de audio en la cual pueda llegar cualquier productor musical y pueda ver todos los plug-ins disponibles incluso por categoria y pueda comprarlos libremente.
+This project is a web application developed with React JS and firebase with the objective of simulating a virtual store of audio plug-ins in which any music producer can arrive and can see all the plug-ins available even by category and can buy them freely. .
 
 Demo: https://plugins-store.web.app/
 
 https://user-images.githubusercontent.com/47612276/184424094-d49b30d6-6a72-4616-993a-1cbc7d9030f4.mov
 
-## Dependencias y librerias utilizadas
+## Dependencies and libraries used
 
-1. Node JS ^16.16.0 ( https://nodejs.org/es/): Entorno de ejecución para JavaScript.
-2. React JS ^18.2.0 (https://es.reactjs.org/): Biblioteca de JavaScript para construir todo el front-end de la aplicación.
-3. Firebase ^9.9.2 (https://firebase.google.com/?hl=es): Para base de datos y hosting.
-4. Formik ^2.2.9 (https://formik.org/): Para maneja de formulario
-5. React-router-dom ^6.3.0 (https://www.npmjs.com/package/react-router-dom): Navegación dentro de la aplicación.
+1. Node JS ^16.16.0 ( https://nodejs.org/es/): Execution environment for JavaScript.
+2. React JS ^18.2.0 (https://es.reactjs.org/): JavaScript library to build the entire front-end of the application.
+3. Firebase ^9.9.2 (https://firebase.google.com/?hl=es): For database and hosting.
+4. Formik ^2.2.9 (https://formik.org/): To handle form
+5. React-router-dom ^6.3.0 (https://www.npmjs.com/package/react-router-dom): Navigation within the application.
 
-## Instalación
+## Installation
 
-1. Clonar este repositorio `git clone https://github.com/jsvaldezv/audio-plugins-store.git`
-2. Entrar a la carpeta del proyecto `cd audio-plugins-store`
-3. Instalar todas las dependencias con `npm i`
-4. Para correr el proyecto localmente se ejecuta `npm start`
-
-## Deploy
-
-El deploy para el hosting se esta haciendo en Firebase por lo que para ellos debemos de seguir lo siguiente
-
-1. Configurar el hosting de firebase `firebase init`
-2. Ya configurado hacemos un `npm run build`
-3. Para hacer deploy usamos `firebase deploy`
-4. Si tienes un back-end y solo quieres hacer deploy del front-end puedes user `firebase deploy --only hosting`
+1. Clone this repository `git clone https://github.com/jsvaldezv/audio-plugins-store.git`
+2. `cd audio-plugins-store`
+3. Install all dependencies with `npm i`
+4. To run the project locally, run `npm start`
 
 ### Follow me
 
