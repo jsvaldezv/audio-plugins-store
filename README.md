@@ -4,8 +4,6 @@
 
 This project is a web application developed with React JS and firebase with the objective of simulating a virtual store of audio plug-ins in which any music producer can arrive and can see all the plug-ins available even by category and can buy them freely. .
 
-Demo: https://plugins-store.web.app/
-
 https://user-images.githubusercontent.com/47612276/184424094-d49b30d6-6a72-4616-993a-1cbc7d9030f4.mov
 
 ## Dependencies and libraries used
