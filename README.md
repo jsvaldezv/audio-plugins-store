@@ -20,16 +20,3 @@ https://user-images.githubusercontent.com/47612276/184424094-d49b30d6-6a72-4616-
 2. `cd audio-plugins-store`
 3. Install all dependencies with `npm i`
 4. To run the project locally, run `npm start`
-
-### Follow me
-
-- Twitter: https://twitter.com/anticode_
-- LinkedIn: https://www.linkedin.com/in/jsvaldezv/
-
-## Follow my audio plug-ins company Ear Candy Technologies: 
-
-- Facebook: https://www.facebook.com/earcandytechnologies 
-- Twitter: https://twitter.com/EarCandyTech 
-- Instagram: https://www.instagram.com/earcandytechnology/ 
-- Youtube: https://www.youtube.com/channel/UCnmhLuxpV3PftGI2YR5kpFA 
-- Discord Server: https://discord.gg/44d6SEmw
